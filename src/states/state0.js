@@ -1,32 +1,32 @@
 import Phaser from "phaser";
 import hexRgb from "hex-rgb";
+import Mousetrap from "mousetrap";
+import _ from "lodash";
 
-window.Phaser = Phaser;
+import SceneHelpers from "../helpers/SceneHelpers";
 
+@SceneHelpers
 class state0 extends Phaser.Scene {
   constructor() {
     super("state0");
   }
 
   preload() {
-    console.log(game.scene.isActive(this.scene.key));
   }
 
   create() {
-    const color = hexRgb("#DDDDDD", { format: "array" });
-    game.config.backgroundColor.setTo(...color);
+    const color = hexRgb("#5e78a0", { format: "array" });
+    this.scene.manager.game.config.backgroundColor.setTo(...color);
 
-    console.log(this.scene.key, this);
-
-    this.input.keyboard.on(
-      Phaser.Input.Keyboard.KeyCodes.ONE,
-      this.changeState
-    );
+    _.range(0, 10).forEach(v => {
+      Mousetrap.bind(v.toString(), e => {
+        this.changeState(e, v);
+      });
+    });
   }
 
   changeState(event, stateNum) {
-    console.log("E", event);
-    game.start("state" + stateNum);
+    this.getGame().scene.start("state" + stateNum);
   }
 
   update() {}

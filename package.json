@@ -53,6 +53,7 @@
     "hex-rgb": "^3.0.0",
     "localforage": "^1.7.2",
     "lodash": "^4.17.10",
+    "mousetrap": "^1.6.2",
     "phaser": "^3.11.0"
   }
 }

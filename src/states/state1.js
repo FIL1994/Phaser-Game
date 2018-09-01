@@ -1,6 +1,9 @@
 import Phaser from "phaser";
 import hexRgb from "hex-rgb";
 
+import SceneHelpers from "../helpers/SceneHelpers";
+
+@SceneHelpers
 class state1 extends Phaser.Scene {
   constructor() {
     super("state1");
@@ -9,8 +12,8 @@ class state1 extends Phaser.Scene {
   preload() {}
 
   create() {
-    const color = hexRgb("#DDDDDD", { format: "array" });
-    game.config.backgroundColor.setTo(...color);
+    const color = hexRgb("#7ad69a", { format: "array" });
+    this.scene.manager.game.config.backgroundColor.setTo(...color);
   }
 
   update() {}

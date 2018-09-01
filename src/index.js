@@ -11,6 +11,8 @@ import state7 from "./states/state7";
 import state8 from "./states/state8";
 import state9 from "./states/state9";
 
+window.Phaser = Phaser;
+
 let game;
 
 window.onload = () => {
@@ -34,7 +36,6 @@ window.onload = () => {
   };
 
   game = new Phaser.Game(gameConfig);
-  window.game = game;
 
   window.focus();
   resize();
