@@ -1,7 +1,15 @@
 import Phaser from "phaser";
 
-import state1 from "./state1";
-import state2 from "./state2";
+import state0 from "./states/state0";
+import state1 from "./states/state1";
+import state2 from "./states/state2";
+import state3 from "./states/state3";
+import state4 from "./states/state4";
+import state5 from "./states/state5";
+import state6 from "./states/state6";
+import state7 from "./states/state7";
+import state8 from "./states/state8";
+import state9 from "./states/state9";
 
 let game;
 
@@ -11,7 +19,18 @@ window.onload = () => {
     width: 550,
     height: 550,
     backgroundColor: 0x880044,
-    scene: [state1, state2]
+    scene: [
+      state0,
+      state1,
+      state2,
+      state3,
+      state4,
+      state5,
+      state6,
+      state7,
+      state8,
+      state9
+    ]
   };
 
   game = new Phaser.Game(gameConfig);
